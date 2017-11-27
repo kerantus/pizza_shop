@@ -1,11 +1,15 @@
 class CreateProducts < ActiveRecord::Migration[5.1]
   def change
 
-    create_table :blogs do |t|
-      t.text :title
-      t.text :
-      t.text :size
-      t.integer :price
+    create_table :products do |t|
+      t.string :title
+      t.text :description
+      t.decimal :price
+      t.decimal :size
+      t.boolean :is_spicy
+      t.boolean :is_veg
+      t.boolean :is_best_offer
+      t.string :path_to_image
 
       t.timestamps #создаёт created_at и updated_at
     end
