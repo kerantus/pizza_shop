@@ -1,6 +1,6 @@
 class AddProducts < ActiveRecord::Migration[5.1]
   def change
-    
+
     Product.create :title => 'ostraya',
                    :description => 'This is pizza on very ostraya',
                    :price => 550,
@@ -16,7 +16,7 @@ class AddProducts < ActiveRecord::Migration[5.1]
                    :size => 40,
                    :is_spicy => true,
                    :is_veg => false,
-                   :is_best_offer => false,
+                   :is_best_offer => true,
                    :path_to_image => '/images/ostraya.jpg'
 
 
