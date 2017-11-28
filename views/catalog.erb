@@ -1,0 +1,27 @@
+<h2>Каталог</h2>
+<table class="table">
+  <tbody>
+  <tr>
+<% @catalog.each do |value| %>
+    <% if (value.id.to_i % 3) == 0 %>
+        <td>
+            <div class="col-md-4" style="display: inline-block">
+          <img src="<%= value.path_to_image%>">
+          </br>
+              <p><%= value.title %>  <%= value.size %> см</p>
+        </div>
+        </td>
+            </tr>
+            <tr>
+    <% else %>
+            <td>
+        <div class="col-md-4" style="display: inline-block">
+          <img src="<%= value.path_to_image%>">
+          </br>
+          <p><%= value.title%> <%= value.size %> см</p>
+        </div>
+            </td>
+
+    <% end %>
+<% end %>
+    </tr>

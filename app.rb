@@ -18,3 +18,18 @@ end
 get '/about' do
 	erb :about
 end
+
+get '/new' do
+	erb :new
+  end
+
+
+post '/new' do
+  Product.create params[:descrip]
+  erb :new
+end
+
+get '/catalog' do
+	@catalog = Product.all
+	erb :catalog
+end
