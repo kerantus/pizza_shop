@@ -1,0 +1,20 @@
+<h2>Каталог</h2>
+
+
+<div class="row">
+<% @catalog.each do |value| %>
+
+      <div class="col-md-4">
+        <div><%= value.title %></div>
+        <img src="<%= value.path_to_image %>">
+        <div>Размер: <%= value.size %> см.</div>
+        <div>Цена: <%= value.price %> руб.</div>
+        <div>
+          <button class="btn btn-sm btn-success">Добавить в корзину</button>
+        </div>
+      </div>
+
+
+<% end %>
+
+</div>

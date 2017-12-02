@@ -5,7 +5,7 @@
 <% @catalog.each do |value| %>
     <% if (value.id.to_i % 3) == 0 %>
         <td>
-            <div class="col-md-4" style="display: inline-block">
+            <div class="col-md-3" style="display: inline-block">
           <img src="<%= value.path_to_image%>">
           </br>
               <p><%= value.title %>  <%= value.size %> см</p>
@@ -15,7 +15,7 @@
             <tr>
     <% else %>
             <td>
-        <div class="col-md-4" style="display: inline-block">
+        <div class="col-md-3" style="display: inline-block">
           <img src="<%= value.path_to_image%>">
           </br>
           <p><%= value.title%> <%= value.size %> см</p>
@@ -25,3 +25,4 @@
     <% end %>
 <% end %>
     </tr>
+    </table>

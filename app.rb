@@ -31,5 +31,5 @@ end
 
 get '/catalog' do
 	@catalog = Product.all
-	erb :catalog
+	erb :catalog_urok
 end
