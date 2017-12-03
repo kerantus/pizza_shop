@@ -22,10 +22,11 @@
         <div>
           <button class="btn btn-sm btn-success" onclick="add_to_cart(<%= value.id %>)">+</button>
           <button class="btn btn-sm btn-success" onclick="remove_from_cart(<%= value.id %>)">-</button>
-          <p>В корзине: <script type='text/javascript'>
-            var x = window.localStorage.getItem('product_' + <%= value.id %>);
-            document.writeln(x*1);
-          </script>
+          <p>В корзине:
+            <script type='text/javascript'>
+              var x = window.localStorage.getItem('product_' + <%= value.id %>);
+              document.writeln(x * 1);
+            </script>
           </p>
         </div>
         </br>
@@ -35,3 +36,9 @@
   <% end %>
 
 </div>
+<script type="text\javascript">
+  $(function() {
+    update_amount_cart_input();
+    update_amount_button();
+    });
+</script>

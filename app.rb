@@ -42,5 +42,5 @@ get '/cart' do
 end
 
 post 'cart' do
-
+  @cart = params[:cart_items]
 end
