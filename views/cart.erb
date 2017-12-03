@@ -1,0 +1,29 @@
+<h2>Ваш заказ</h2>
+
+<div id="elements"></div>
+<script>
+  var str="";
+  for (var i=0; i < localStorage.length; i++) {
+    str += "Ключ: " + localStorage.key(i) + "; Значение: " + localStorage.getItem(localStorage.key(i)) + ".<br>";
+  }
+  document.getElementById("elements").innerHTML = str;
+</script>
+<br>
+
+<div id="elements1" name="elem1"></div>
+<script>
+  var product="";
+  for (var i=0; i < localStorage.length; i++) {
+    product += localStorage.key(i) +" => " + localStorage.getItem(localStorage.key(i)) + "</br>";
+    document.getElementById("elements1").innerHTML = product;
+  }
+
+</script>
+
+<p><%= @cart %></p>
+
+
+
+
+
+

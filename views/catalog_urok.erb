@@ -2,19 +2,36 @@
 
 
 <div class="row">
-<% @catalog.each do |value| %>
+  <% @catalog.each do |value| %>
 
       <div class="col-md-4">
-        <div><%= value.title %></div>
-        <img src="<%= value.path_to_image %>">
-        <div>Размер: <%= value.size %> см.</div>
-        <div>Цена: <%= value.price %> руб.</div>
         <div>
-          <button class="btn btn-sm btn-success">Добавить в корзину</button>
+          <%= value.title %>
         </div>
+
+        <img src="<%= value.path_to_image %>">
+
+        <div>
+          Размер: <%= value.size %> см.
+        </div>
+
+        <div>
+          Цена: <%= value.price %> руб.
+        </div>
+
+        <div>
+          <button class="btn btn-sm btn-success" onclick="add_to_cart(<%= value.id %>)">+</button>
+          <button class="btn btn-sm btn-success" onclick="remove_from_cart(<%= value.id %>)">-</button>
+          <p>В корзине: <script type='text/javascript'>
+            var x = window.localStorage.getItem('product_' + <%= value.id %>);
+            document.writeln(x*1);
+          </script>
+          </p>
+        </div>
+        </br>
       </div>
 
 
-<% end %>
+  <% end %>
 
 </div>

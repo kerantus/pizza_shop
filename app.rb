@@ -9,19 +9,21 @@ set :database, "sqlite3:pizza_shop.db"
 class Product < ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+end
 
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 get '/about' do
-	erb :about
+  erb :about
 end
 
 get '/new' do
-	erb :new
-  end
+  erb :new
+end
 
 
 post '/new' do
@@ -30,6 +32,15 @@ post '/new' do
 end
 
 get '/catalog' do
-	@catalog = Product.all
-	erb :catalog_urok
+  @catalog = Product.all
+  erb :catalog_urok
+end
+
+get '/cart' do
+  @cart = params[:elem1]
+  erb :cart
+end
+
+post 'cart' do
+
 end
